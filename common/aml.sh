@@ -88,3 +88,4 @@ patch -p1 <<'EOF'
  <!--#endif-->
      <path name="compress-offload-playback speaker-protected">
 EOF
+cd -

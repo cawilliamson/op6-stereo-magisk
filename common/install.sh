@@ -92,6 +92,7 @@ patch -p1 <<'EOF'
  <!--#endif-->
      <path name="compress-offload-playback speaker-protected">
 EOF
+cd -
 
 # enable aml support (magisk only)
 $MAGISK && cp -f $INSTALLER/common/aml.sh $UNITY/.aml.sh
