@@ -1,5 +1,7 @@
-# unpatch file
+# change to vendor dir
 cd $UNITY$VEN/etc
+
+# remove patch
 busybox patch -p1 -R <<'EOF'
 --- a/mixer_paths_tavil.xml
 +++ b/mixer_paths_tavil.xml
@@ -85,5 +87,7 @@ busybox patch -p1 -R <<'EOF'
      </path>
  <!--#endif-->
      <path name="compress-offload-playback speaker-protected">
-EOF
+EOF >/dev/null
+
+# return to original dir
 cd -

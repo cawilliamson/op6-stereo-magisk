@@ -4,9 +4,11 @@ mkdir -p $INSTALLER$SYS/vendor/etc
 # copy original file to module (magisk only)
 $MAGISK && cp_ch_nb $VEN/etc/mixer_paths_tavil.xml $INSTALLER$SYS/vendor/etc/mixer_paths_tavil.xml 0644
 
-# patch file
+# change to vendor dir
 cd $INSTALLER$SYS/vendor/etc
-patch -p1 <<'EOF'
+
+# patch file
+patch -p1 -N <<'EOF'
 --- a/mixer_paths_tavil.xml
 +++ b/mixer_paths_tavil.xml
 @@ -399,7 +399,7 @@
@@ -91,7 +93,9 @@ patch -p1 <<'EOF'
      </path>
  <!--#endif-->
      <path name="compress-offload-playback speaker-protected">
-EOF
+EOF >/dev/null
+
+# return to original dir
 cd -
 
 # enable aml support (magisk only)

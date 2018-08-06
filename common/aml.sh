@@ -1,8 +1,10 @@
 RUNONCE=true
 
-# patch file
+# change to vendor dir
 cd $MODPATH/system/vendor/etc
-patch -p1 <<'EOF'
+
+# patch file
+patch -p1 -N <<'EOF'
 --- a/mixer_paths_tavil.xml
 +++ b/mixer_paths_tavil.xml
 @@ -399,7 +399,7 @@
@@ -88,4 +90,6 @@ patch -p1 <<'EOF'
  <!--#endif-->
      <path name="compress-offload-playback speaker-protected">
 EOF
+
+# return to original dir
 cd -
