@@ -89,7 +89,7 @@ patch -p1 -N <<'EOF'
      </path>
  <!--#endif-->
      <path name="compress-offload-playback speaker-protected">
-EOF
+EOF >/dev/null
 
 # return to original dir
 cd -
