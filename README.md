@@ -1,4 +1,4 @@
-Changelog:
+## Changelog
 
 * v1 - Initial Release
 * v2 - Fixed the earpiece not working throughout the system
