@@ -87,7 +87,7 @@ busybox patch -p1 -R <<'EOF'
      </path>
  <!--#endif-->
      <path name="compress-offload-playback speaker-protected">
-EOF >/dev/null
+EOF >/dev/null 2>&1
 
 # return to original dir
 cd -
