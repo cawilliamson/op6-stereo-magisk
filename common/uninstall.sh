@@ -2,7 +2,7 @@
 cd $UNITY$VEN/etc
 
 # remove patch
-busybox patch -p1 -R <<'EOF'
+patch -p1 -R -N >/dev/null <<'EOF'
 --- a/mixer_paths_tavil.xml
 +++ b/mixer_paths_tavil.xml
 @@ -399,7 +399,7 @@
@@ -87,7 +87,7 @@ busybox patch -p1 -R <<'EOF'
      </path>
  <!--#endif-->
      <path name="compress-offload-playback speaker-protected">
-EOF >/dev/null 2>&1
+EOF
 
 # return to original dir
 cd -
