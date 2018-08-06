@@ -4,7 +4,7 @@ RUNONCE=true
 cd $MODPATH/system/vendor/etc
 
 # patch file
-patch -p1 -N >/dev/null >2&1 <<'EOF'
+patch -p1 -N &>/dev/null <<'EOF'
 --- a/mixer_paths_tavil.xml
 +++ b/mixer_paths_tavil.xml
 @@ -399,7 +399,7 @@
@@ -92,4 +92,4 @@ patch -p1 -N >/dev/null >2&1 <<'EOF'
 EOF
 
 # return to original dir
-cd -
+cd - &>/dev/null
