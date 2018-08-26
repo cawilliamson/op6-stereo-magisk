@@ -62,7 +62,7 @@ print_modname() {
   ui_print "    **************************"
   ui_print "    * OP6 Stereo Speaker Mod *"
   ui_print "    **************************"
-  ui_print "    *           v6           *"
+  ui_print "    *           v7           *"
   ui_print "    *   acervenky, chrisaw   *"
   ui_print "    **************************"
   ui_print " "

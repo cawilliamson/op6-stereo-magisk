@@ -11,17 +11,17 @@ cd $INSTALLER$SYS/vendor/etc
 patch -p1 -N &>/dev/null <<'EOF'
 --- a/mixer_paths_tavil.xml
 +++ b/mixer_paths_tavil.xml
-@@ -399,3 +399,3 @@
+@@ -401,3 +401,3 @@
      <!-- CDC_IF and SLIM controls -->
 -    <ctl name="SLIM RX0 MUX" value="ZERO" />
 +    <ctl name="SLIM RX0 MUX" value="AIF1_PB" />
      <ctl name="SLIM RX1 MUX" value="ZERO" />
-@@ -429,3 +429,3 @@
+@@ -431,3 +431,3 @@
      <!-- Interpolator chain controls -->
 -    <ctl name="RX INT0_1 MIX1 INP0" value="ZERO" />
 +    <ctl name="RX INT0_1 MIX1 INP0" value="RX0" />
      <ctl name="RX INT0_1 MIX1 INP1" value="ZERO" />
-@@ -586,3 +586,11 @@
+@@ -588,3 +588,11 @@
      <path name="deep-buffer-playback quat_i2s">
 +	<ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia1" value="1" />
 +        <ctl name="SLIM RX0 MUX" value="AIF1_PB" />
@@ -33,7 +33,7 @@ patch -p1 -N &>/dev/null <<'EOF'
          <ctl name="QUAT_MI2S_RX Audio Mixer MultiMedia1" value="1" />
 +		<ctl name="RX0 HPF cut off" value="MIN_3DB_150Hz"/>
      </path>
-@@ -654,3 +662,11 @@
+@@ -656,3 +664,11 @@
      <path name="low-latency-playback quat_i2s">
 +	<ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia5" value="1" />
 +        <ctl name="SLIM RX0 MUX" value="AIF1_PB" />
@@ -45,7 +45,7 @@ patch -p1 -N &>/dev/null <<'EOF'
          <ctl name="QUAT_MI2S_RX Audio Mixer MultiMedia5" value="1" />
 +		<ctl name="RX0 HPF cut off" value="MIN_3DB_150Hz"/>
      </path>
-@@ -726,3 +742,11 @@
+@@ -728,3 +744,11 @@
      <path name="audio-ull-playback quat_i2s">
 +	<ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia8" value="1" />
 +        <ctl name="SLIM RX0 MUX" value="AIF1_PB" />
@@ -57,7 +57,7 @@ patch -p1 -N &>/dev/null <<'EOF'
          <ctl name="QUAT_MI2S_RX Audio Mixer MultiMedia8" value="1" />
 +		<ctl name="RX0 HPF cut off" value="MIN_3DB_150Hz"/>
      </path>
-@@ -796,3 +820,11 @@
+@@ -798,3 +822,11 @@
      <path name="compress-offload-playback quat_i2s">
 +	<ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia4" value="1" />
 +        <ctl name="SLIM RX0 MUX" value="AIF1_PB" />
