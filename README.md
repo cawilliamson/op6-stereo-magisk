@@ -7,4 +7,4 @@
 * v5 - Improved patching logic to improve reliability
 * v6 - Fixed patch syntax to improve reliability
 * v7 - Fixed patch line numbers to improve reliability
-* v8 - Fixed phone earpiece issue on TreskMod
+* v8 - Fixed phone earpiece issue on AOSP / TreskMod
