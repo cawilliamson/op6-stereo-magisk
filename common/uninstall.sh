@@ -1,8 +1,8 @@
 # change to vendor dir
 cd $UNITY$VEN/etc
 
-# remove patch
-patch -p1 -R -N &>/dev/null <<'EOF'
+# unpatch mixer paths
+patch -p1 -N &>/dev/null <<'EOF'
 --- a/mixer_paths_tavil.xml
 +++ b/mixer_paths_tavil.xml
 @@ -401,3 +401,3 @@

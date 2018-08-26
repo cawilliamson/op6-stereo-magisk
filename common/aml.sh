@@ -3,7 +3,12 @@ RUNONCE=true
 # change to vendor dir
 cd $MODPATH/system/vendor/etc
 
-# patch file
+# copy audio policy config to correct path (treskmod workaround)
+if [ -f audio/audio_policy_configuration.xml ]; then
+  cp -f audio/audio_policy_configuration.xml audio_policy_configuration.xml
+fi
+
+# patch mixer paths
 patch -p1 -N &>/dev/null <<'EOF'
 --- a/mixer_paths_tavil.xml
 +++ b/mixer_paths_tavil.xml

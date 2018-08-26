@@ -1,13 +1,19 @@
 # create directory structure
 mkdir -p $INSTALLER$SYS/vendor/etc
 
-# copy original file to module (magisk only)
+# copy original files to module (magisk only)
+$MAGISK && cp_ch_nb $VEN/etc/audio_policy_configuration.xml $INSTALLER$SYS/vendor/etc/audio_policy_configuration.xml 0644
 $MAGISK && cp_ch_nb $VEN/etc/mixer_paths_tavil.xml $INSTALLER$SYS/vendor/etc/mixer_paths_tavil.xml 0644
 
 # change to vendor dir
 cd $INSTALLER$SYS/vendor/etc
 
-# patch file
+# copy audio policy config to correct path (treskmod workaround)
+if [ -f audio/audio_policy_configuration.xml ]; then
+  cp -f audio/audio_policy_configuration.xml audio_policy_configuration.xml
+fi
+
+# patch mixer paths
 patch -p1 -N &>/dev/null <<'EOF'
 --- a/mixer_paths_tavil.xml
 +++ b/mixer_paths_tavil.xml
